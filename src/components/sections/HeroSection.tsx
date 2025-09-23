@@ -36,9 +36,7 @@ export const HeroSection = () => {
         <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
           {/* Headline */}
           <h1 className="text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight">
-            Flexible generative AI
-            <br />
-            for image and video
+            Generative media in the blink of an API
           </h1>
           
           {/* Subtext */}
