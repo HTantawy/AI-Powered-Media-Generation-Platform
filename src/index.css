@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Runware Cinematic Design System - Discord-inspired premium theme */
+
+@layer base {
+  :root {
+    /* Runware Brand Colors (HSL) */
+    --background: 264 14% 15%; /* #2B2D31 */
+    --surface: 260 12% 19%; /* #313338 */
+    --elevated: 264 14% 22%;
+    --glass: 264 14% 22%;
+    
+    --primary: 249 45% 36%; /* #403386 - Exact purple from user */
+    --primary-hover: 249 45% 46%;
+    --primary-foreground: 210 11% 93%;
+    
+    --accent: 252 43% 38%; /* #403386 */
+    --accent-foreground: 210 11% 93%;
+    
+    --text-primary: 210 11% 93%; /* #EDEDED */
+    --text-muted: 220 9% 71%; /* #B5BAC1 */
+    --text-subtle: 225 7% 55%;
+    
+    --border: 264 14% 22%;
+    --border-glass: 0 0% 100% / 0.1;
+    
+    /* Semantic Tokens */
+    --foreground: var(--text-primary);
+    --card: var(--surface);
+    --card-foreground: var(--text-primary);
+    --popover: var(--elevated);
+    --popover-foreground: var(--text-primary);
+    --secondary: var(--surface);
+    --secondary-foreground: var(--text-primary);
+    --muted: var(--elevated);
+    --muted-foreground: var(--text-muted);
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: var(--text-primary);
+    --input: var(--elevated);
+    --ring: var(--primary);
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-background: radial-gradient(ellipse at 25% 0%, hsl(var(--primary) / 0.15), transparent 50%),
+                          radial-gradient(ellipse at 75% 100%, hsl(var(--accent) / 0.15), transparent 50%);
+    --gradient-glass: linear-gradient(135deg, hsl(var(--glass) / 0.8), hsl(var(--glass) / 0.4));
+    
+    /* Shadows */
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-lift: 0 12px 40px hsl(0 0% 0% / 0.4);
+    
+    /* Animations */
+    --transition-fast: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: hsl(var(--background));
+    background-image: var(--gradient-background);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Glass Card Components */
+  .glass-card {
+    @apply rounded-xl backdrop-blur-xl;
+    background: var(--gradient-glass);
+    border: 1px solid hsl(var(--border-glass));
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Glow Effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Button Variants */
+  .btn-hero {
+    @apply px-8 py-4 rounded-xl font-semibold;
+    background: hsl(var(--primary));
+    color: hsl(var(--text-primary));
+    border: 1px solid hsl(var(--border-glass));
+    backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .btn-hero:hover {
+    background: hsl(var(--primary-hover));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift), var(--shadow-glow);
+  }
+  
+  .btn-glass {
+    @apply px-6 py-3 rounded-lg font-medium;
+    background: hsl(var(--glass) / 0.6);
+    color: hsl(var(--text-primary));
+    border: 1px solid hsl(var(--border-glass));
+    backdrop-filter: blur(12px);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-glass:hover {
+    background: hsl(var(--glass) / 0.8);
+    transform: translateY(-1px);
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-track {
+    background: hsl(var(--surface));
+    border-radius: 4px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+  
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    100% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes fade-in-up {
+    from { 
+      opacity: 0; 
+      transform: translateY(20px); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+}
