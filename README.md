@@ -1,6 +1,7 @@
 # Runware Media Generator
 
-A modern React web application demonstrating AI-powered image and video generation using the Runware API. Built for the Graduate Roles Practical Assessment.
+Runware Media Generator is a sleek React web application that showcases the power of AI-driven creativity through the Runware API
+. Designed as part of the Graduate Roles Practical Assessment, this project demonstrates how developers can integrate cutting-edge AI models into a modern frontend experience.
 
 ## Features
 
@@ -10,6 +11,11 @@ A modern React web application demonstrating AI-powered image and video generati
 - **Real-time Processing**: WebSocket integration for live generation updates
 - **Modern UI**: Clean, responsive interface with Tailwind CSS
 - **Type Safety**: Full TypeScript implementation
+
+## Screenshots
+![Generation Demo](./src/assets/runware-showcase.png)
+
+![App Homepage](./src/assets/tabs.png)
 
 ## Tech Stack
 
