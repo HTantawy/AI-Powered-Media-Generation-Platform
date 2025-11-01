@@ -32,13 +32,13 @@ export const ShowcaseSection = () => {
     },
     {
       id: 2,
-      url: "https://im.runware.ai/image/ws/2/ii/a5099f4e-bcb2-41b9-a9ea-9ee7784225b4.jpg",
+      url: "/van.png",
       title: "Van Gogh inspired desert image",
       prompt: "A Van Gogh–inspired oil painting of a desert caravan at sunset. A line of camels and travelers crosses the crest of a sandy hill, silhouetted against a glowing orange sun and a radiant sky of swirling pink, red, and blue brushstrokes. The sand dunes are textured with thick, expressive strokes of paint, capturing the rhythmic patterns of wind-swept terrain. The atmosphere is dreamlike, impressionistic, with vivid colors and dynamic swirling skies reminiscent of Van Gogh’s post-impressionist style"
     },
     {
       id: 3,
-      url: "https://im.runware.ai/image/ws/2/ii/1160d9b8-9868-4879-9f89-a53c57e2389b.jpg",
+      url: "/desert.webp",
       title: "Arabian desert with Northern lights",
       prompt: "Cinematic shot of a desert caravan under a sky of auroras"
     },
@@ -50,7 +50,7 @@ export const ShowcaseSection = () => {
     },
     {
       id: 5,
-      url: "https://im.runware.ai/image/ws/2/ii/19b0f697-85ce-4d33-8ade-a7fe4a61fdf3.webp",
+      url: "/mountain.png",
       title: "Mountain made of glass",
       prompt: "A surreal landscape where mountains are made of glass and rivers flow with liquid gold, painted in a dreamy style"
     },
